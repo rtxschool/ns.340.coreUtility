@@ -12,13 +12,14 @@
     <string name="txt_frag_summary">
         Summary
     </string>
-    <string name = "txt_frag_stat"
-        >
+    <string name="txt_frag_stat">
        Self Stats
     </string>
-    <string name = "txt_frag_prof"
-        >
+    <string name="txt_frag_prof">
         Proficiencies
+    </string>
+    <string name="txt_frag_cam">
+        Street Cams
     </string>
 
     <string name="first_fragment_label">First Fragment</string>
@@ -85,8 +86,15 @@
     <string name="stxt_cmd_tsk3">
         Assignment 3 | Fragments, etc
     </string>
+    <string name="stxt_cmd_tsk4">
+         Assignment 4 | Steet Cams
+    </string>
     <string name="stxt_cmd_tsk1">
         Assignment 1 | Self Stats
+    </string>
+
+    <string name="scmd_tsk4">
+        Street Cams
     </string>
 
     <string name="scmd_self_stat">
@@ -94,4 +102,8 @@
     </string>
     <string name="title_activity_self_stat">selfStat</string>
     <string name="title_activity_r">r</string>
+    <string name="title_activity_r0">r0</string>
+    <string name="title_activity_r1">r1</string>
+    <string name="title_activity_street_cam">streetCam</string>
+    <string name="title_activity_cam_street">camStreet</string>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph16"
+    android:label="@string/txt_frag_cam"
+    app:startDestination="@id/First8Fragment">
+
+    <fragment
+        android:id="@+id/First8Fragment"
+        android:name="com.rtxschool.zombies.First8Fragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first8" />
+</navigation>

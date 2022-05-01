@@ -16,6 +16,9 @@
         <action
             android:id="@+id/from_prim_to_stat"
             app:destination="@id/first6Fragment" />
+        <action
+            android:id="@+id/from_prim_to_cam"
+            app:destination="@id/first8Fragment" />
     </fragment>
     <fragment
         android:id="@+id/first2Fragment"
@@ -45,4 +48,9 @@
         android:name="com.rtxschool.zombies.SecondFragment"
         android:label="@string/txt_frag_prof"
         tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/first8Fragment"
+        android:name="com.rtxschool.zombies.First8Fragment"
+        android:label="@string/txt_frag_cam"
+        tools:layout="@layout/fragment_first8" />
 </navigation>

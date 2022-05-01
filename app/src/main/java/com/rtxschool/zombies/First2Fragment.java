@@ -53,6 +53,7 @@ public class First2Fragment extends Fragment {
                         );
             }
         });
+
     }
 
     @Override
@@ -60,5 +61,4 @@ public class First2Fragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rtxschool.zombies">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,14 +13,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zombies">
         <activity
-            android:name=".selfStat"
+            android:name=".camStreet"
             android:exported="false"
-            android:label="@string/title_activity_self_stat"
+            android:label="@string/title_activity_cam_street"
+            android:theme="@style/Theme.Zombies.NoActionBar" />
+        <activity
+            android:name=".streetCam"
+            android:exported="false"
+            android:label="@string/title_activity_street_cam"
+            android:theme="@style/Theme.Zombies.NoActionBar" />
+        <activity
+            android:name=".r1"
+            android:exported="false"
+            android:label="@string/title_activity_r1"
+            android:theme="@style/Theme.Zombies.NoActionBar" />
+        <activity
+            android:name=".r0"
+            android:exported="false"
+            android:label="@string/title_activity_r0"
             android:theme="@style/Theme.Zombies.NoActionBar" />
         <activity
             android:name=".r"
             android:exported="false"
             android:label="@string/title_activity_r"
+            android:theme="@style/Theme.Zombies.NoActionBar" />
+        <activity
+            android:name=".selfStat"
+            android:exported="false"
+            android:label="@string/title_activity_self_stat"
             android:theme="@style/Theme.Zombies.NoActionBar" />
         <activity
             android:name=".summary"

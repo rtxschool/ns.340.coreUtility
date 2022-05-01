@@ -44,8 +44,6 @@ public class FirstFragment extends Fragment {
 
                         NavHostFragment.findNavController(FirstFragment.this)
                                 .navigate(R.id.from_prim_to_stat);
-
-
                     }
 
                 });
@@ -61,6 +59,18 @@ public class FirstFragment extends Fragment {
             }
 
         });
+
+        cur_context.cmdStreet
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        NavHostFragment.findNavController(FirstFragment.this)
+                                .navigate(R.id.from_prim_to_cam
+                                );
+                    }
+
+                });
 
         cur_context.txtCmdTsk1.
                 setOnClickListener(new View.OnClickListener() {
@@ -127,8 +137,25 @@ public class FirstFragment extends Fragment {
                             set_vis_status_crdTsk3();
                     }
                 });
-    }
+        cur_context.txtCmdTsk4.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        set_vis_status_crdTsk4();
+                    }
+                });
 
+        cur_context.crdTsk4.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (cur_context.crdStreet
+                                .getVisibility() == GONE
+                        )
+                            set_vis_status_crdTsk4();
+                    }
+                });
+    }
 
     void set_vis_status_crdTsk1() {
         int status = VISIBLE;
@@ -164,6 +191,18 @@ public class FirstFragment extends Fragment {
                 .setVisibility(status);
     }
 
+    void set_vis_status_crdTsk4() {
+        int status = VISIBLE;
+
+        if (cur_context.crdStreet.
+                getVisibility() == VISIBLE
+        )
+            status = GONE;
+        hide_tsks();
+        cur_context.crdStreet
+                .setVisibility(status);
+    }
+
 
     void hide_tsks() {
         cur_context.logPrim.setVisibility(GONE);
@@ -172,6 +211,7 @@ public class FirstFragment extends Fragment {
                 .setVisibility(GONE);
         cur_context.crdSelfStat
                 .setVisibility(GONE);
+        cur_context.crdStreet.setVisibility(GONE);
     }
 
 
