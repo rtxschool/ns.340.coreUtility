@@ -415,6 +415,69 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crd_tsk4_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/crd_tsk4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#B4B4B4"
+                    app:cardBackgroundColor="#505050"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#A89912"
+                        android:paddingBottom="28dp"
+                        android:scrollbarAlwaysDrawVerticalTrack="false"
+                        android:scrollbars="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/txt_cmd_tsk4_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/stxt_cmd_tsk4_2"
+                            android:textColor="#0664AF"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_cartog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_cmd_tsk4_2"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+
+                            android:background="#B4B4B4"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#505050"
+                            app:cardCornerRadius="8dp">
+
+                            <Button
+                                android:id="@+id/cmd_cartog"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="18dp"
+                                android:backgroundTint="#C8C8C8"
+                                android:text="@string/scmd_tsk4_2"
+                                app:cornerRadius="4dp" />
+
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
             </RelativeLayout>
 
         </ScrollView>

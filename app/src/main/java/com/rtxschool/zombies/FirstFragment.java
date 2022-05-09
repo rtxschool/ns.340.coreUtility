@@ -72,6 +72,19 @@ public class FirstFragment extends Fragment {
 
                 });
 
+
+        cur_context.cmdCartog
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        NavHostFragment.findNavController(FirstFragment.this)
+                                .navigate(R.id.from_prim_to_cartog
+                                );
+                    }
+
+                });
+
         cur_context.txtCmdTsk1.
                 setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -155,6 +168,25 @@ public class FirstFragment extends Fragment {
                             set_vis_status_crdTsk4();
                     }
                 });
+
+        cur_context.txtCmdTsk42.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        set_vis_status_crdTsk4_2();
+                    }
+                });
+
+        cur_context.crdTsk42.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (cur_context.crdStreet
+                                .getVisibility() == GONE
+                        )
+                            set_vis_status_crdTsk4_2();
+                    }
+                });
     }
 
     void set_vis_status_crdTsk1() {
@@ -200,6 +232,18 @@ public class FirstFragment extends Fragment {
             status = GONE;
         hide_tsks();
         cur_context.crdStreet
+                .setVisibility(status);
+    }
+
+    void set_vis_status_crdTsk4_2() {
+        int status = VISIBLE;
+
+        if (cur_context.crdCartog.
+                getVisibility() == VISIBLE
+        )
+            status = GONE;
+        hide_tsks();
+        cur_context.crdCartog
                 .setVisibility(status);
     }
 
