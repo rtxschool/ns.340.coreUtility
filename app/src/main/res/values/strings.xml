@@ -89,6 +89,10 @@
     <string name="stxt_cmd_tsk4">
          Assignment 4 | Steet Cams
     </string>
+    <string name="stxt_cmd_tsk4_2">
+        Assignment ? | Cartog
+    </string>
+
     <string name="stxt_cmd_tsk1">
         Assignment 1 | Self Stats
     </string>
@@ -97,6 +101,9 @@
         Street Cams
     </string>
 
+    <string name="scmd_tsk4_2">
+        Cartog
+    </string>
     <string name="scmd_self_stat">
         Self Stats
     </string>
@@ -106,4 +113,12 @@
     <string name="title_activity_r1">r1</string>
     <string name="title_activity_street_cam">streetCam</string>
     <string name="title_activity_cam_street">camStreet</string>
+    <string name="title_activity_cartog">cartog</string>
+    <string name="title_activity_cartog_issues">cartogIssues</string>
+
+    <string name="cartog_gps_issues">
+        Either your locate feature is not active, or you rejected the request to provide location.
+    </string>
+    <string name="title_activity_mehp">mehp</string>
+    <string name="title_activity_cartog_street">cartogStreet</string>
 </resources>
