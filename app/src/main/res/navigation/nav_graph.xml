@@ -64,9 +64,8 @@
         tools:layout="@layout/fragment_first8" />
     <fragment
         android:id="@+id/second2Fragment"
-        android:name="com.rtxschool.zombies.Second2Fragment"
-        android:label="Cargtog"
-        tools:layout="@layout/fragment_second2" >
+        android:name="com.rtxschool.zombies.cartogFrag"
+        android:label="Streets Map">
         <action
             android:id="@+id/cartog_to_street"
             app:destination="@id/second6Fragment" />
@@ -78,9 +77,8 @@
         tools:layout="@layout/fragment_first9" />
     <fragment
         android:id="@+id/second6Fragment"
-        android:name="com.rtxschool.zombies.Second6Fragment"
-        android:label="Street Cam"
-        tools:layout="@layout/fragment_second6" />
+        android:name="com.rtxschool.zombies.cartogStreetFrag"
+        android:label="Street Cam" />
     <fragment
         android:id="@+id/camStreetNetIssuesFrag"
         android:name="com.rtxschool.zombies.camStreetNetIssuesFrag"
