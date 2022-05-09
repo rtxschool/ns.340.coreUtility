@@ -19,6 +19,15 @@
         <action
             android:id="@+id/from_prim_to_cam"
             app:destination="@id/first8Fragment" />
+        <action
+            android:id="@+id/from_prim_to_cartog"
+            app:destination="@id/second2Fragment" />
+        <action
+            android:id="@+id/prim_to_gps_issues"
+            app:destination="@id/first9Fragment" />
+        <action
+            android:id="@+id/prim_to_cam_street_issues"
+            app:destination="@id/camStreetNetIssuesFrag" />
     </fragment>
     <fragment
         android:id="@+id/first2Fragment"
@@ -50,7 +59,31 @@
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/first8Fragment"
-        android:name="com.rtxschool.zombies.First8Fragment"
+        android:name="com.rtxschool.zombies.camStreetFrag"
         android:label="@string/txt_frag_cam"
         tools:layout="@layout/fragment_first8" />
+    <fragment
+        android:id="@+id/second2Fragment"
+        android:name="com.rtxschool.zombies.Second2Fragment"
+        android:label="Cargtog"
+        tools:layout="@layout/fragment_second2" >
+        <action
+            android:id="@+id/cartog_to_street"
+            app:destination="@id/second6Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/first9Fragment"
+        android:name="com.rtxschool.zombies.First9Fragment"
+        android:label="Locate Issues"
+        tools:layout="@layout/fragment_first9" />
+    <fragment
+        android:id="@+id/second6Fragment"
+        android:name="com.rtxschool.zombies.Second6Fragment"
+        android:label="Street Cam"
+        tools:layout="@layout/fragment_second6" />
+    <fragment
+        android:id="@+id/camStreetNetIssuesFrag"
+        android:name="com.rtxschool.zombies.camStreetNetIssuesFrag"
+        android:label="Net Issues"
+        tools:layout="@layout/fragment_cam_street_net_issues" />
 </navigation>
