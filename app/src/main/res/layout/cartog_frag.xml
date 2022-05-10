@@ -39,10 +39,11 @@
             map:cameraZoom="10" />
     </RelativeLayout>
 
-<RelativeLayout
+    <RelativeLayout
         android:id="@+id/cont_cargot_locate_issues"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
         android:padding="22dp"
         android:visibility="gone">
 
@@ -63,13 +64,15 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/cartog_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#B4B4B4"
+            android:text="Return" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/cont_cartog_net_issues"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-    </RelativeLayout>
 </FrameLayout>

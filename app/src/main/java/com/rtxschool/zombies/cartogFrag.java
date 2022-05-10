@@ -1,11 +1,23 @@
-/*
-AD 340
-Project Steet Camera Maps
- */
+//AD 340
+//Project.. Street Camera Maps
+
+//Requirements
+//detects the user's location
+//provide the map, centered to the user's coords
+//provide blue marker for the user's coords
+//provide red marker for each traffic camera found from the prior assignment
+//provide the camera label if the marker tapped
+
+//E.C.
+//provide the geocoded of the user's coords
+
+//Bonus
+//Provide the photo of the camera if marker is tapped
 
 package com.rtxschool.zombies;
 
 import static android.view.View.VISIBLE;
+import static androidx.constraintlayout.widget.ConstraintSet.GONE;
 import static com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY;
 import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
 
@@ -60,7 +72,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-
 public class cartogFrag
         extends Fragment implements OnMapReadyCallback {
     private CartogFragBinding
@@ -91,8 +102,6 @@ public class cartogFrag
             LayoutInflater inflater, ViewGroup container,
             Bundle content
     ) {
-
-
         binding = CartogFragBinding
                 .inflate(inflater, container, false);
 
@@ -119,12 +128,24 @@ public class cartogFrag
         return binding.getRoot();
     }
 
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.cartogReturn
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        binding.contCargotLocateIssues.setVisibility(GONE);
+                    }
+
+                });
+    }
+
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         cartog_static.prev_cam_loc = g_mehp.getCameraPosition().target;
     }
-
 
     //tie the mapview to the map object
     @Override
@@ -181,7 +202,6 @@ public class cartogFrag
 
     GoogleMap tmp_mehp = null;
 
-
     //1nce the map is ready then
     //   * set the tap event for the markers
     //   * create the marker for the current locate if found
@@ -192,7 +212,6 @@ public class cartogFrag
         if (cur_mehp == null
         )
             return;  //map is not ready yet
-
 
         g_mehp = cur_mehp;
 
@@ -218,8 +237,8 @@ public class cartogFrag
                     return !true;
 
                 if (cartog_static.bonus == 0
-                    )
-                   return !true;
+                )
+                    return !true;
 
                 Object tag = mrk.getTag();
 
@@ -264,14 +283,14 @@ public class cartogFrag
 
             if (cartog_static.prev_cam_loc == null
             )
-            //move to current locate
-            g_mehp.moveCamera(CameraUpdateFactory.newLatLng(cur_loc)
-            );
+                //move to current locate
+                g_mehp.moveCamera(CameraUpdateFactory.newLatLng(cur_loc)
+                );
             else
 
-                g_mehp.animateCamera(CameraUpdateFactory. newLatLngZoom(cartog_static.prev_cam_loc,
-                                                                         cartog_static.zoom),
-                                                                          2, null);
+                g_mehp.animateCamera(CameraUpdateFactory.newLatLngZoom(cartog_static.prev_cam_loc,
+                        cartog_static.zoom),
+                        2, null);
 
             MarkerOptions opts =
                     new
@@ -301,7 +320,7 @@ public class cartogFrag
             cam_proc.get_list(getActivity()
             );
         }
-        }
+    }
 
     //the cameras are retireved.  show them.
     void cameras_to_mrks
@@ -310,9 +329,12 @@ public class cartogFrag
         for (int i = 0; i < list.size(); i++
         ) {
             cam_p cur_cam = list.get(i);
-          //if (cur_cam.type.toLowerCase().equals("sdot")
-          //)
-            {
+            if (!
+                    (cur_cam.type.toLowerCase().equals("sdot") ||
+                            cartog_static.bonus == 0
+                    )
+            ) {
+            } else {
                 LatLng cur = new LatLng(cur_cam.coor_x, cur_cam.coor_y
                 );
 
@@ -329,6 +351,13 @@ public class cartogFrag
 
                 cur_mrk.setTag(i
                 );
+
+                if (cur_loc == null
+                ) {
+                    g_mehp.animateCamera(CameraUpdateFactory.newLatLngZoom(cur,
+                            10),
+                            2, null);
+                }
             }
         }
     }
@@ -337,7 +366,6 @@ public class cartogFrag
     void gps_issues() {
         binding.contCargotLocateIssues.setVisibility(VISIBLE);
     }
-
 
     //start the locate cycle
     protected void startLocationUpdates() {
@@ -382,10 +410,10 @@ public class cartogFrag
         );
 
         binding.txtCurLt.setText("lt.. " + cur_loc.latitude
-                                );
+        );
 
         binding.txtCurLg.setText("lg.. " + cur_loc.longitude
-                                );
+        );
     }
 
     //look to see the most recent locate
@@ -411,4 +439,4 @@ public class cartogFrag
                     }
                 });
     }
-    }
+}
