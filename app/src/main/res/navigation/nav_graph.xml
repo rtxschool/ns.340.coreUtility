@@ -23,40 +23,37 @@
             android:id="@+id/from_prim_to_cartog"
             app:destination="@id/second2Fragment" />
         <action
-            android:id="@+id/prim_to_gps_issues"
-            app:destination="@id/first9Fragment" />
-        <action
             android:id="@+id/prim_to_cam_street_issues"
             app:destination="@id/camStreetNetIssuesFrag" />
     </fragment>
     <fragment
         android:id="@+id/first2Fragment"
-        android:name="com.rtxschool.zombies.First2Fragment"
+        android:name="com.rtxschool.zombies.zombiesPubsFrag"
         android:label="@string/txt_frag_movies"
-        tools:layout="@layout/fragment_first2">
+        tools:layout="@layout/zombies_pubs_frag">
         <action
             android:id="@+id/from_movies_to_summary"
             app:destination="@id/first4Fragment" />
     </fragment>
     <fragment
         android:id="@+id/first4Fragment"
-        android:name="com.rtxschool.zombies.First4Fragment"
+        android:name="com.rtxschool.zombies.zombieSpecificFrag"
         android:label="@string/txt_frag_summary"
-        tools:layout="@layout/fragment_first4" />
+        tools:layout="@layout/zombie_specific_frag" />
     <fragment
         android:id="@+id/first6Fragment"
-        android:name="com.rtxschool.zombies.First6Fragment"
+        android:name="com.rtxschool.zombies.selfStatFrag"
         android:label="@string/txt_frag_stat"
-        tools:layout="@layout/fragment_first6">
+        tools:layout="@layout/self_stat_frag">
         <action
             android:id="@+id/from_stat_to_career"
             app:destination="@id/secondFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.rtxschool.zombies.SecondFragment"
+        android:name="com.rtxschool.zombies.selfStatCareerFrag"
         android:label="@string/txt_frag_prof"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/self_stat_career_frag" />
     <fragment
         android:id="@+id/first8Fragment"
         android:name="com.rtxschool.zombies.camStreetFrag"
@@ -70,11 +67,6 @@
             android:id="@+id/cartog_to_street"
             app:destination="@id/second6Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/first9Fragment"
-        android:name="com.rtxschool.zombies.First9Fragment"
-        android:label="Locate Issues"
-        tools:layout="@layout/fragment_first9" />
     <fragment
         android:id="@+id/second6Fragment"
         android:name="com.rtxschool.zombies.cartogStreetFrag"

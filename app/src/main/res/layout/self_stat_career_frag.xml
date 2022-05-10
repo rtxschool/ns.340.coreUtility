@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".First6Fragment"
+    tools:context=".selfStatCareerFrag"
     >
 
     <RelativeLayout
@@ -26,7 +26,7 @@
                 android:layout_centerHorizontal="false"
                 android:fontFamily="sans-serif"
 
-                android:text="Application Developer"
+                android:text="Technical Proficencies"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -43,19 +43,30 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cnt_return"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hdr"
+            android:background="#646464">
+
+       </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/hdr">
+            android:layout_below="@id/cnt_return">
 
 
             <RelativeLayout
                 android:id="@+id/content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="#646464"
+                android:paddingBottom="80dp"
                 android:scrollbarAlwaysDrawVerticalTrack="false"
                 android:scrollbars="horizontal">
 
@@ -81,7 +92,7 @@
                             android:id="@+id/ed_hist_hdr"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Education History"
+                            android:text="Code Languages"
                             android:textColor="@color/white"
                             android:textSize="16sp"
 
@@ -92,7 +103,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/ed_hist_hdr"
-                            android:text="AAS | Engineeer"
+                            android:text="C#, C++, Visual Basic, Java, ASP.net, Pascal"
                             android:textColor="@color/white"
                             android:textSize="13sp"
 
@@ -123,7 +134,7 @@
                             android:id="@+id/ed_goal_hdr"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Education Goal"
+                            android:text="Database Technologies"
                             android:textColor="@color/white"
                             android:textSize="16sp"
 
@@ -134,7 +145,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/ed_goal_hdr"
-                            android:text="BSAT | Application Development"
+                            android:text="MS SQL Server, MySQL, Oracle, SQLite"
                             android:textColor="@color/white"
                             android:textSize="13sp"
 
@@ -175,21 +186,12 @@
                                 android:id="@+id/career_bg_hdr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Career Summary"
+                                android:text="Technology Realms"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
 
                                 />
 
-                            <ImageButton
-                                android:id="@+id/img_career"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/career_bg_hdr"
-                                android:background="#64A020"
-                                android:onClick="get_career"
-                                android:src="@android:drawable/ic_menu_info_details"
-                                android:translationX="22dp" />
                         </RelativeLayout>
 
 
@@ -198,86 +200,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/career_bg_hdr_prim"
-                            android:text="Application Development"
+                            android:text="Desktop tools, Web based tools, API utilization, Prototypes"
                             android:textColor="@color/white"
                             android:textSize="13sp"
 
                             />
 
-                        <TextView
-                            android:id="@+id/career_bg_content_y_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content1"
-                            android:text="        22 years"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-
-                            />
-
-                        <TextView
-                            android:id="@+id/career_bg_content2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content_y_1"
-                            android:text="College I.S. Teacher"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-
-                            />
-
-                        <TextView
-                            android:id="@+id/career_bg_content_y_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content2"
-                            android:text="        6 years"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-
-                            />
-
-                        <TextView
-                            android:id="@+id/career_bg_content4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content_y_2"
-                            android:text="College Eng Tech Teacher"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-
-                            />
-
-                        <TextView
-                            android:id="@+id/career_bg_content_y_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content4"
-                            android:text="        2 years"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-
-                            />
-
-                        <TextView
-                            android:id="@+id/career_bg_content6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content_y_4"
-                            android:text="Engineer Technologist"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-
-                            />
-
-                        <TextView
-                            android:id="@+id/career_bg_content_y_6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/career_bg_content6"
-                            android:text="        2 years"
-                            android:textColor="@color/white"
-                            android:textSize="13sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>

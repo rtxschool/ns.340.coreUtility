@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/activity_movies.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/activity_summary.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/cam.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/cam_street_frag.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/cartog_frag.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_cartog_street.xml" value="0.10099637681159421" />
         <entry key="app/src/main/res/layout/content_mehp.xml" value="0.10840932117527863" />
@@ -17,12 +18,20 @@
         <entry key="app/src/main/res/layout/fragment_first2.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/fragment_first3.xml" value="0.13405797101449277" />
         <entry key="app/src/main/res/layout/fragment_first4.xml" value="0.10326086956521739" />
+        <entry key="app/src/main/res/layout/fragment_first5.xml" value="0.10099637681159421" />
         <entry key="app/src/main/res/layout/fragment_first6.xml" value="0.10326086956521739" />
+        <entry key="app/src/main/res/layout/fragment_first7.xml" value="0.10099637681159421" />
         <entry key="app/src/main/res/layout/fragment_first8.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_first9.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/fragment_second2.xml" value="0.13405797101449277" />
+        <entry key="app/src/main/res/layout/fragment_second3.xml" value="0.10099637681159421" />
+        <entry key="app/src/main/res/layout/fragment_second4.xml" value="0.10099637681159421" />
         <entry key="app/src/main/res/layout/fragment_second6.xml" value="0.10099637681159421" />
+        <entry key="app/src/main/res/layout/self_stat_career_frag.xml" value="0.10326086956521739" />
+        <entry key="app/src/main/res/layout/self_stat_frag.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/zombie.xml" value="0.10326086956521739" />
+        <entry key="app/src/main/res/layout/zombies_pubs_frag.xml" value="0.10099637681159421" />
       </map>
     </option>
   </component>

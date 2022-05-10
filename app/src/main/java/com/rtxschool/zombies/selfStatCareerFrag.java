@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.rtxschool.zombies.databinding.FragmentSecond5Binding;
+import com.rtxschool.zombies.databinding.SelfStatCareerFragBinding;
 
-public class Second5Fragment extends Fragment {
+public class selfStatCareerFrag
+        extends Fragment {
 
-    private FragmentSecond5Binding binding;
+    private SelfStatCareerFragBinding
+            binding;
 
     @Override
     public View onCreateView(
@@ -21,8 +23,15 @@ public class Second5Fragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecond5Binding.inflate(inflater, container, false);
+        binding = SelfStatCareerFragBinding
+                .inflate(inflater, container, false);
         return binding.getRoot();
+
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
 
     }
 

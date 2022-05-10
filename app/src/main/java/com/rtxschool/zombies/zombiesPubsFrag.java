@@ -12,11 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.rtxschool.zombies.databinding.FragmentFirst2Binding;
+import com.rtxschool.zombies.databinding.ZombiesPubsFragBinding;
 
-public class First2Fragment extends Fragment {
+public class zombiesPubsFrag
+        extends Fragment {
 
-    private FragmentFirst2Binding binding;
+    private ZombiesPubsFragBinding
+            binding;
 
     @Override
     public View onCreateView(
@@ -24,7 +26,8 @@ public class First2Fragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirst2Binding.inflate(inflater, container, false);
+        binding = ZombiesPubsFragBinding
+                .inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -48,7 +51,8 @@ public class First2Fragment extends Fragment {
                 Bundle b = new Bundle();
                 b.putString("movie", z.nomencl
                 );
-                NavHostFragment.findNavController(First2Fragment.this)
+                NavHostFragment.findNavController(zombiesPubsFrag.this
+                                                  )
                         .navigate(R.id.from_movies_to_summary, b
                         );
             }

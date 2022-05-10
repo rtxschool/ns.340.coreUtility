@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.rtxschool.zombies.databinding.FragmentFirst6Binding;
+import com.rtxschool.zombies.databinding.SelfStatFragBinding;
 
-public class First6Fragment extends Fragment {
+public class selfStatFrag
+        extends Fragment {
 
-    private FragmentFirst6Binding cur_context;
+    private SelfStatFragBinding
+            cur_context;
 
     @Override
     public View onCreateView(
@@ -22,7 +24,8 @@ public class First6Fragment extends Fragment {
     ) {
 
         cur_context
-                = FragmentFirst6Binding.inflate(inflater, container, false);
+                = SelfStatFragBinding.
+                inflate(inflater, container, false);
         return cur_context.getRoot();
 
     }
@@ -36,7 +39,8 @@ public class First6Fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
 
-                        NavHostFragment.findNavController(First6Fragment.this)
+                        NavHostFragment.findNavController(selfStatFrag.this
+                                                           )
                                 .navigate(R.id.from_stat_to_career);
 
 

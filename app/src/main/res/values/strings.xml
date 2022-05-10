@@ -133,4 +133,8 @@
     <string name="title_activity_mehp">mehp</string>
     <string name="title_activity_cartog_street">cartogStreet</string>
 
+    <string name="net_issue"
+        >
+        "We could not reach the network from your device.  Verify your options";
+    </string>
 </resources>

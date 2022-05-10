@@ -6,7 +6,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    tools:context=".First2Fragment">
+    tools:context=".zombiesPubsFrag"
+    >
 
     <ListView
         android:id="@+id/lst"

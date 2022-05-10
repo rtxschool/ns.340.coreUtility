@@ -34,7 +34,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.rtxschool.zombies.databinding.FragmentFirst8Binding;
+import com.rtxschool.zombies.databinding.CamStreetFragBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,7 +42,8 @@ import org.json.JSONObject;
 
 public class camStreetFrag extends Fragment {
 
-    private FragmentFirst8Binding binding;
+    private CamStreetFragBinding
+            binding;
     private RequestQueue mRequestQueue;
 
     cam_iter ci = null;
@@ -54,9 +55,9 @@ public class camStreetFrag extends Fragment {
     ) {
         mRequestQueue = Volley.newRequestQueue(getActivity()
         );
-        binding = FragmentFirst8Binding.inflate(inflater, container, false);
+        binding = CamStreetFragBinding
+                .inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {

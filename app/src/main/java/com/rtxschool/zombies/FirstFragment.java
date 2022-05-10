@@ -4,6 +4,8 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,15 @@ import com.rtxschool.zombies.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding cur_context;
+
+    boolean is_net_found() {
+        ConnectivityManager cm = (ConnectivityManager)
+                getActivity().getSystemService(Context.CONNECTIVITY_SERVICE
+                );
+        NetworkInfo i = cm.getActiveNetworkInfo();
+
+        return (i != null && i.isConnected());
+    }
 
     @Override
     public View onCreateView(
@@ -76,24 +87,33 @@ public class FirstFragment extends Fragment {
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        int to = R.id.from_prim_to_cartog;
+
+                        if (!is_net_found()
+                        )
+                            to = R.id.prim_to_cam_street_issues;
                         cartog_static.bonus = 0;
                         NavHostFragment.findNavController(FirstFragment.this)
-                                .navigate(R.id.from_prim_to_cartog
+                                .navigate(to
                                 );
                     }
-
                 });
+
 
         cur_context.cmdCartogBonus
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        int to = R.id.from_prim_to_cartog;
+
+                        if (!is_net_found()
+                        )
+                            to = R.id.prim_to_cam_street_issues;
                         cartog_static.bonus = 1;
                         NavHostFragment.findNavController(FirstFragment.this)
-                                .navigate(R.id.from_prim_to_cartog
+                                .navigate(to
                                 );
                     }
-
                 });
 
         cur_context.txtCmdTsk1.

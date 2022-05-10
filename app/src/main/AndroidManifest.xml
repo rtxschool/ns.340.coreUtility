@@ -3,6 +3,7 @@
     package="com.rtxschool.zombies">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -20,11 +21,6 @@
             android:name=".cartogStreet"
             android:exported="false"
             android:label="@string/title_activity_cartog_street"
-            android:theme="@style/Theme.Zombies.NoActionBar" />
-        <activity
-            android:name=".cartogIssues"
-            android:exported="false"
-            android:label="@string/title_activity_cartog_issues"
             android:theme="@style/Theme.Zombies.NoActionBar" />
         <activity
             android:name=".cartog"

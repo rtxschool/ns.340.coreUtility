@@ -14,13 +14,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.rtxschool.zombies.databinding.FragmentFirst4Binding;
+import com.rtxschool.zombies.databinding.ZombieSpecificFragBinding;
 
 import java.io.InputStream;
 
-public class First4Fragment extends Fragment {
+public class zombieSpecificFrag
+        extends Fragment {
 
-    private FragmentFirst4Binding cur_context;
+    private ZombieSpecificFragBinding
+            cur_context;
 
     @Override
     public void onDestroyView() {
@@ -35,7 +37,8 @@ public class First4Fragment extends Fragment {
     ) {
 
         cur_context
-                = FragmentFirst4Binding.inflate(inflater, container, false);
+                = ZombieSpecificFragBinding.
+                inflate(inflater, container, false);
         return cur_context.getRoot();
 
     }

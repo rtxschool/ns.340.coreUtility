@@ -32,7 +32,7 @@ android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:layout_below="@id/frg8_img"
 android:padding="18dp"
-android:text="TextView"
+android:text="@string/net_issue"
 android:textColor="#000000" />
     </RelativeLayout>
     </ScrollView>
