@@ -11,7 +11,7 @@
             android:id="@+id/the_mehp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            map:cameraTargetLat="-34"
+            map:cameraTargetLat="-42"
             map:cameraTargetLng="151"
             map:cameraZoom="10" />
 

@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -85,18 +84,14 @@ public class cartogFrag
 
     Marker cur_mrk = null;
 
-
-    @Override
-    public void onCreate(Bundle content
-    ) {
-        super.onCreate(content);
-    }
+    LatLng prev_cam_loc = null;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
+            Bundle content
     ) {
+
 
         binding = CartogFragBinding
                 .inflate(inflater, container, false);
@@ -107,18 +102,14 @@ public class cartogFrag
                 Manifest.permission.ACCESS_COARSE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED) {
             request_status = 1;
+            refresh_request();
         }
         //else if ???????
         else if (shouldShowRequestPermissionRationale("SHould you choose")
         ) {
-            String msg = "";
-            Toast.makeText
-                    (getActivity(),
-                            msg, Toast.LENGTH_SHORT).show();
         }
         //else ask to be permitted
-        else
-        {
+        else {
             requestPermissions(
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}
                     , 1);
@@ -128,10 +119,18 @@ public class cartogFrag
         return binding.getRoot();
     }
 
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        cartog_static.prev_cam_loc = g_mehp.getCameraPosition().target;
+    }
+
+
     //tie the mapview to the map object
     @Override
     public void onActivityCreated(Bundle content
     ) {
+        mehp_to_loc = 0;
         super.onActivityCreated(content);
         mMapView = binding.theMehp;
 
@@ -153,11 +152,10 @@ public class cartogFrag
     //1nce the user replies to the permit locate request..
     @Override
     public void onRequestPermissionsResult
-            (int requestCode,
-             @NonNull String[] permissions,
-             @NonNull int[] res
-            )
-    {
+    (int requestCode,
+     @NonNull String[] permissions,
+     @NonNull int[] res
+    ) {
         //if permitted the set the request status to 1 & run the appropriate code
         if (res[0] == 0
         ) {
@@ -181,6 +179,9 @@ public class cartogFrag
         }
     }
 
+    GoogleMap tmp_mehp = null;
+
+
     //1nce the map is ready then
     //   * set the tap event for the markers
     //   * create the marker for the current locate if found
@@ -194,6 +195,19 @@ public class cartogFrag
 
 
         g_mehp = cur_mehp;
+
+        if (tmp_mehp == null
+        )
+            tmp_mehp = g_mehp;
+
+        if (g_mehp != tmp_mehp) {
+            mehp_to_loc = 0;
+
+            tmp_mehp = g_mehp;
+
+            got_cameras = 0;
+
+        }
 
         //set marker tap events
         g_mehp.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -217,26 +231,47 @@ public class cartogFrag
                         .navigate(R.id.cartog_to_street, b
                         );
 
+                cartog_static.zoom = g_mehp.getCameraPosition().zoom;
+
+                cartog_static.prev_cam_loc = g_mehp.getCameraPosition().target;
+
+
                 return !true;
 
             }
         });
 
+        LatLng null_is = new LatLng(-42.0, -151.0);
+
+        if (cur_mehp.getCameraPosition().equals(null_is)
+        ) {
+            mehp_to_loc = 0;
+        }
         //if there is no locate ..
         if (cur_loc == null
-        )
-
-        {
+        ) {
         }
+
         //if there is locate
         else if (mehp_to_loc == 0
         ) {
             mehp_to_loc =
                     1;
 
+            if (cartog_static.prev_cam_loc == null
+            )
             //move to current locate
             g_mehp.moveCamera(CameraUpdateFactory.newLatLng(cur_loc)
             );
+            else
+
+                g_mehp.animateCamera(CameraUpdateFactory. newLatLngZoom(cartog_static.prev_cam_loc,
+                                                                         cartog_static.zoom),
+                                                                          2, null);
+
+             // g_mehp.moveCamera(CameraUpdateFactory.newLatLng(cartog_static.prev_cam_loc
+             //                                                )
+             //              );
 
             MarkerOptions opts =
                     new
@@ -270,30 +305,29 @@ public class cartogFrag
 
     //the cameras are retireved.  show them.
     void cameras_to_mrks
-            (ArrayList<cam_p> list) {
+    (ArrayList<cam_p> list) {
 
         for (int i = 0; i < list.size(); i++
         ) {
             cam_p cur_cam = list.get(i);
-    //      if (cur_cam.type.toLowerCase().equals("sdot")
-    //      )
-            {
-            LatLng cur = new LatLng(cur_cam.coor_x, cur_cam.coor_y
-            );
+            if (cur_cam.type.toLowerCase().equals("sdot")
+            ) {
+                LatLng cur = new LatLng(cur_cam.coor_x, cur_cam.coor_y
+                );
 
-            MarkerOptions opts =
-                    new
-                            MarkerOptions()
-                            .position(cur)
-                            .title(list.get(i).nomencl
-                            )
-                            .zIndex(0.0f);
+                MarkerOptions opts =
+                        new
+                                MarkerOptions()
+                                .position(cur)
+                                .title(list.get(i).nomencl
+                                )
+                                .zIndex(0.0f);
 
-            Marker cur_mrk =
-                    g_mehp.addMarker(opts);
+                Marker cur_mrk =
+                        g_mehp.addMarker(opts);
 
-            cur_mrk.setTag(i
-            );
+                cur_mrk.setTag(i
+                );
             }
         }
     }
@@ -340,19 +374,14 @@ public class cartogFrag
     // TODO: utilizeis to move the marker & show the user's current locate
     public void onLocationChanged(Location location) {
 
-        String msg = "Updated Location: " +
-                Double.toString(location.getLatitude()) + "," +
-                Double.toString(location.getLongitude());
-        Toast.makeText
-                (getActivity(),
-                        msg, Toast.LENGTH_SHORT).show();
-        // You can now create a LatLng Object for use with maps
         cur_loc =
                 new LatLng(location.getLatitude(), location.getLongitude());
+        cartog_static.the_cur_loc = cur_loc;
         onMapReady(g_mehp
         );
 
     }
+
 
     //look to see the most recent locate
     public void getLastLocation() {
@@ -378,3 +407,4 @@ public class cartogFrag
                 });
     }
 }
+
