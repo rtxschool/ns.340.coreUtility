@@ -217,6 +217,10 @@ public class cartogFrag
                 )
                     return !true;
 
+                if (cartog_static.bonus == 0
+                    )
+                   return !true;
+
                 Object tag = mrk.getTag();
 
                 int cam = (int) tag;
@@ -297,7 +301,7 @@ public class cartogFrag
             cam_proc.get_list(getActivity()
             );
         }
-    }
+        }
 
     //the cameras are retireved.  show them.
     void cameras_to_mrks
@@ -407,5 +411,4 @@ public class cartogFrag
                     }
                 });
     }
-}
-
+    }

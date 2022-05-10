@@ -72,12 +72,23 @@ public class FirstFragment extends Fragment {
 
                 });
 
-
         cur_context.cmdCartog
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        cartog_static.bonus = 0;
+                        NavHostFragment.findNavController(FirstFragment.this)
+                                .navigate(R.id.from_prim_to_cartog
+                                );
+                    }
 
+                });
+
+        cur_context.cmdCartogBonus
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cartog_static.bonus = 1;
                         NavHostFragment.findNavController(FirstFragment.this)
                                 .navigate(R.id.from_prim_to_cartog
                                 );
@@ -187,6 +198,26 @@ public class FirstFragment extends Fragment {
                             set_vis_status_crdTsk4_2();
                     }
                 });
+
+
+        cur_context.txtCmdTsk420.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        set_vis_status_crdTsk4_2_0();
+                    }
+                });
+
+        cur_context.crdTsk420.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (cur_context.crdStreet
+                                .getVisibility() == GONE
+                        )
+                            set_vis_status_crdTsk4_2_0();
+                    }
+                });
     }
 
     void set_vis_status_crdTsk1() {
@@ -247,6 +278,17 @@ public class FirstFragment extends Fragment {
                 .setVisibility(status);
     }
 
+    void set_vis_status_crdTsk4_2_0() {
+        int status = VISIBLE;
+
+        if (cur_context.crdCartogBonus.
+                getVisibility() == VISIBLE
+        )
+            status = GONE;
+        hide_tsks();
+        cur_context.crdCartogBonus
+                .setVisibility(status);
+    }
 
     void hide_tsks() {
         cur_context.logPrim.setVisibility(GONE);
@@ -264,5 +306,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         cur_context = null;
     }
-
 }

@@ -89,8 +89,14 @@
     <string name="stxt_cmd_tsk4">
          Assignment 4 | Steet Cams
     </string>
-    <string name="stxt_cmd_tsk4_2">
-        Assignment ? | Cartog
+    <string name="stxt_cmd_tsk4_2"
+        >
+          Maps Assignment + e.c.
+    </string>
+
+    <string name="stxt_cmd_tsk4_2_0"
+        >
+         The Maps + e.c. + bonus
     </string>
 
     <string name="stxt_cmd_tsk1">
@@ -101,8 +107,13 @@
         Street Cams
     </string>
 
-    <string name="scmd_tsk4_2">
-        Cartog
+    <string name="scmd_tsk4_2"
+        >
+        Maps
+    </string>
+    <string name="scmd_tsk4_2_0"
+        >
+        The Maps +
     </string>
     <string name="scmd_self_stat">
         Self Stats
@@ -121,4 +132,5 @@
     </string>
     <string name="title_activity_mehp">mehp</string>
     <string name="title_activity_cartog_street">cartogStreet</string>
+
 </resources>
