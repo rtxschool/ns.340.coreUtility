@@ -269,10 +269,6 @@ public class cartogFrag
                                                                          cartog_static.zoom),
                                                                           2, null);
 
-             // g_mehp.moveCamera(CameraUpdateFactory.newLatLng(cartog_static.prev_cam_loc
-             //                                                )
-             //              );
-
             MarkerOptions opts =
                     new
                             MarkerOptions()
@@ -310,8 +306,9 @@ public class cartogFrag
         for (int i = 0; i < list.size(); i++
         ) {
             cam_p cur_cam = list.get(i);
-            if (cur_cam.type.toLowerCase().equals("sdot")
-            ) {
+          //if (cur_cam.type.toLowerCase().equals("sdot")
+          //)
+            {
                 LatLng cur = new LatLng(cur_cam.coor_x, cur_cam.coor_y
                 );
 
@@ -380,8 +377,12 @@ public class cartogFrag
         onMapReady(g_mehp
         );
 
-    }
+        binding.txtCurLt.setText("lt.. " + cur_loc.latitude
+                                );
 
+        binding.txtCurLg.setText("lg.. " + cur_loc.longitude
+                                );
+    }
 
     //look to see the most recent locate
     public void getLastLocation() {
