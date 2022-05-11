@@ -326,6 +326,10 @@ public class cartogFrag
     void cameras_to_mrks
     (ArrayList<cam_p> list) {
 
+        int c = 0;
+        float long_sum = 0;
+        float lt_sum = 0;
+
         for (int i = 0; i < list.size(); i++
         ) {
             cam_p cur_cam = list.get(i);
@@ -352,13 +356,27 @@ public class cartogFrag
                 cur_mrk.setTag(i
                 );
 
-                if (cur_loc == null
-                ) {
-                    g_mehp.animateCamera(CameraUpdateFactory.newLatLngZoom(cur,
-                            10),
-                            2, null);
-                }
+                long_sum += cur.longitude;
+
+                lt_sum += cur.latitude;
+
+                c++;
             }
+        }
+
+        if (cur_loc == null
+        )
+        {
+            float lng = long_sum / c;
+
+            float
+            lt = lt_sum / c;
+
+            LatLng cur = new LatLng(lt, lng);
+
+            g_mehp.animateCamera(CameraUpdateFactory.newLatLngZoom(cur,
+                    10),
+                    2, null);
         }
     }
 
@@ -425,7 +443,7 @@ public class cartogFrag
                 .addOnSuccessListener(new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(Location location) {
-                        // GPS location can be null if GPS is switched off
+
                         if (location != null) {
                             onLocationChanged(location);
                         }

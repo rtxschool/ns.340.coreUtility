@@ -9,7 +9,7 @@ public class cartog_static {
     public static GoogleMap prim_cartog = null;
     public static LatLng the_cur_loc = null;
     public static LatLng prev_cam_loc = null;
-    public static float zoom = 0;
+    public static float zoom = 10;
     public static int bonus = 0;
 }
 
