@@ -27,8 +27,16 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="electr_m">
+        E Mail
+    </string>
+
+    <string name="user_nomencl">
+        User Name
+    </string>
+    <string name="p_code">
+        Pass Code
+    </string>
     <string name="str_each">
         Each
     </string>
@@ -89,14 +97,16 @@
     <string name="stxt_cmd_tsk4">
          Assignment 4 | Steet Cams
     </string>
-    <string name="stxt_cmd_tsk4_2"
-        >
-          Maps Assignment + e.c.
+    <string name="stxt_cmd_tsk4_2">
+          Maps Assignment
     </string>
 
-    <string name="stxt_cmd_tsk4_2_0"
-        >
-         The Maps + e.c. + bonus
+    <string name="stxt_cmd_tsk4_2_0">
+         The Maps + bonus
+    </string>
+
+    <string name="stxt_cmd_tsk6">
+         Assignment 6 | Persistence
     </string>
 
     <string name="stxt_cmd_tsk1">
@@ -107,13 +117,14 @@
         Street Cams
     </string>
 
-    <string name="scmd_tsk4_2"
-        >
+    <string name="scmd_tsk4_2">
         Maps
     </string>
-    <string name="scmd_tsk4_2_0"
-        >
+    <string name="scmd_tsk4_2_0">
         The Maps +
+    </string>
+    <string name="scmd_tsk6">
+        Persistence
     </string>
     <string name="scmd_self_stat">
         Self Stats
@@ -133,8 +144,12 @@
     <string name="title_activity_mehp">mehp</string>
     <string name="title_activity_cartog_street">cartogStreet</string>
 
-    <string name="net_issue"
-        >
+    <string name="net_issue">
         "We could not reach the network from your device.  Verify your options";
     </string>
+    <string name="title_activity_persist_credent">persistCredent</string>
+    <string name="title_activity_persist_user">persistUser</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

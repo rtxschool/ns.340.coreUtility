@@ -10,9 +10,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -99,7 +96,6 @@ public class FirstFragment extends Fragment {
                     }
                 });
 
-
         cur_context.cmdCartogBonus
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -110,6 +106,18 @@ public class FirstFragment extends Fragment {
                         )
                             to = R.id.prim_to_cam_street_issues;
                         cartog_static.bonus = 1;
+                        NavHostFragment.findNavController(FirstFragment.this)
+                                .navigate(to
+                                );
+                    }
+                });
+
+        cur_context.cmdPersist
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int to = R.id.prim_to_persist_user;
+
                         NavHostFragment.findNavController(FirstFragment.this)
                                 .navigate(to
                                 );
@@ -181,6 +189,7 @@ public class FirstFragment extends Fragment {
                             set_vis_status_crdTsk3();
                     }
                 });
+
         cur_context.txtCmdTsk4.
                 setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -219,7 +228,6 @@ public class FirstFragment extends Fragment {
                     }
                 });
 
-
         cur_context.txtCmdTsk420.
                 setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -236,6 +244,25 @@ public class FirstFragment extends Fragment {
                                 .getVisibility() == GONE
                         )
                             set_vis_status_crdTsk4_2_0();
+                    }
+                });
+
+        cur_context.txtCmdTsk6.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        set_vis_status_crdTsk6();
+                    }
+                });
+
+        cur_context.crdTsk6.
+                setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (cur_context.crdStreet
+                                .getVisibility() == GONE
+                        )
+                            set_vis_status_crdTsk6();
                     }
                 });
     }
@@ -310,6 +337,18 @@ public class FirstFragment extends Fragment {
                 .setVisibility(status);
     }
 
+    void set_vis_status_crdTsk6() {
+        int status = VISIBLE;
+
+        if (cur_context.crdPersist.
+                getVisibility() == VISIBLE
+        )
+            status = GONE;
+        hide_tsks();
+        cur_context.crdPersist
+                .setVisibility(status);
+    }
+
     void hide_tsks() {
         cur_context.logPrim.setVisibility(GONE);
         cur_context.crdBtns.setVisibility(GONE);
@@ -318,8 +357,13 @@ public class FirstFragment extends Fragment {
         cur_context.crdSelfStat
                 .setVisibility(GONE);
         cur_context.crdStreet.setVisibility(GONE);
-    }
 
+        cur_context.crdCartog.setVisibility(GONE);
+
+        cur_context.crdCartogBonus.setVisibility(GONE);
+
+        cur_context.crdPersist.setVisibility(GONE);
+    }
 
     @Override
     public void onDestroyView() {

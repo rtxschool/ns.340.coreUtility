@@ -8,9 +8,6 @@
 //provide red marker for each traffic camera found from the prior assignment
 //provide the camera label if the marker tapped
 
-//E.C.
-//provide the geocoded of the user's coords
-
 //Bonus
 //Provide the photo of the camera if marker is tapped
 
