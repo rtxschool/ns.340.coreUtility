@@ -25,6 +25,24 @@
         <action
             android:id="@+id/prim_to_cam_street_issues"
             app:destination="@id/camStreetNetIssuesFrag" />
+        <action
+            android:id="@+id/prim_to_persist_user"
+            app:destination="@id/persistUserFrag" />
+        <action
+            android:id="@+id/prim_to_firebase"
+            app:destination="@id/firebaseActivity2" />
+        <action
+            android:id="@+id/prim_to_persist_users"
+            app:destination="@id/persistUsersFrag" />
+        <action
+            android:id="@+id/primToPersi1"
+            app:destination="@id/first2Fragment2" />
+        <action
+            android:id="@+id/primPersist2"
+            app:destination="@id/secondFragment2" />
+        <action
+            android:id="@+id/primToPersistCredent"
+            app:destination="@id/persistCredent" />
     </fragment>
     <fragment
         android:id="@+id/first2Fragment"
@@ -76,4 +94,34 @@
         android:name="com.rtxschool.zombies.camStreetNetIssuesFrag"
         android:label="Net Issues"
         tools:layout="@layout/fragment_cam_street_net_issues" />
+    <fragment
+        android:id="@+id/persistUserFrag"
+        android:name="com.rtxschool.zombies.persistUserFrag"
+        android:label="Persist Logon"
+        tools:layout="@layout/persist_user_frag" />
+    <activity
+        android:id="@+id/firebaseActivity2"
+        android:name="com.rtxschool.zombies.FirebaseActivity"
+        android:label="activity_firebase"
+        tools:layout="@layout/activity_firebase" />
+    <fragment
+        android:id="@+id/persistUsersFrag"
+        android:name="com.rtxschool.zombies.persistUsersFrag"
+        android:label="FireBase"
+        tools:layout="@layout/persist_users_frag" />
+    <fragment
+        android:id="@+id/first2Fragment2"
+        android:name="com.rtxschool.zombies.First2Fragment"
+        android:label="fragment_first2"
+        tools:layout="@layout/fragment_first2" />
+    <fragment
+        android:id="@+id/secondFragment2"
+        android:name="com.rtxschool.zombies.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <activity
+        android:id="@+id/persistCredent"
+        android:name="com.rtxschool.zombies.persistCredent"
+        android:label="activity_persist_credent"
+        tools:layout="@layout/activity_persist_credent" />
 </navigation>

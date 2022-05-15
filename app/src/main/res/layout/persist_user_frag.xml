@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="#646424"
+    tools:context=".persistUserFrag">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/hdr">
+
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#646424"
+            android:paddingBottom="28dp"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:scrollbars="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#B4B4B4"
+                app:cardBackgroundColor="#505050"
+                app:cardCornerRadius="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#A89912"
+                    android:paddingBottom="28dp"
+                    android:scrollbarAlwaysDrawVerticalTrack="false"
+                    android:scrollbars="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/h_txt_nomencl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginRight="18dp"
+                        android:text="@string/user_nomencl" />
+
+                    <EditText
+                        android:id="@+id/txt_nomencl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/h_txt_nomencl"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="18dp"
+                        android:hint="@string/user_nomencl"
+                    android:inputType="textShortMessage"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/h_txt_electr_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_nomencl"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginRight="18dp"
+                        android:text="@string/electr_m"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/txt_electr_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/h_txt_electr_m"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="18dp"
+                        android:ems="10"
+                        android:hint="@string/electr_m"
+                        android:inputType="textEmailAddress"
+                        />
+
+                    <TextView
+                        android:id="@+id/h_txt_p_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_electr_m"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginRight="18dp"
+                        android:text="@string/p_code"
+                            />
+
+                    <EditText
+                        android:id="@+id/txt_p_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/h_txt_p_code"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="18dp"
+                        android:ems="10"
+                        android:hint="@string/p_code"
+                        android:inputType="textPassword"
+
+                        />
+
+                    <Button
+                        android:id="@+id/cmd_persist_log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_p_code"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="28dp"
+                        android:backgroundTint="#C8C8C8"
+                        android:text="@string/str_log"
+                        app:cornerRadius="4dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
