@@ -43,6 +43,9 @@
         <action
             android:id="@+id/primToPersistCredent"
             app:destination="@id/persistCredent" />
+        <action
+            android:id="@+id/action_FirstFragment_to_persistUser"
+            app:destination="@id/persistUser" />
     </fragment>
     <fragment
         android:id="@+id/first2Fragment"
@@ -102,7 +105,7 @@
     <activity
         android:id="@+id/firebaseActivity2"
         android:name="com.rtxschool.zombies.FirebaseActivity"
-        android:label="activity_firebase"
+        android:label="Firebase"
         tools:layout="@layout/activity_firebase" />
     <fragment
         android:id="@+id/persistUsersFrag"
@@ -124,4 +127,9 @@
         android:name="com.rtxschool.zombies.persistCredent"
         android:label="activity_persist_credent"
         tools:layout="@layout/activity_persist_credent" />
+    <activity
+        android:id="@+id/persistUser"
+        android:name="com.rtxschool.zombies.persistUser"
+        android:label="activity_persist_user"
+        tools:layout="@layout/activity_persist_user" />
 </navigation>

@@ -1,3 +1,5 @@
+//manages the persistent shared prefs for firebase
+
 package com.rtxschool.zombies;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -12,6 +14,7 @@ public class shared_pref
     String p_code;
     Activity context;
 
+    //overload to retrieve the current prefs
     shared_pref
             (Activity context
             )
@@ -31,6 +34,7 @@ public class shared_pref
                                   );
         }
 
+        //overload to create pref
     shared_pref
             (String user,
              String electro,
@@ -47,6 +51,7 @@ public class shared_pref
         this.p_code = p_code;
     }
 
+    //set the prefs
     public void submit()
     {
         SharedPreferences s = context.getSharedPreferences("util", MODE_PRIVATE
@@ -64,5 +69,4 @@ public class shared_pref
 
         spe.apply();
         }
-
-}
+        }

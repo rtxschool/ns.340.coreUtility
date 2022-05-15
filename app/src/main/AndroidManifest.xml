@@ -16,10 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zombies">
         <activity
-            android:name=".persistUser"
+            android:name=".FirebaseActivity"
             android:exported="false"
-            android:label="@string/title_activity_persist_user"
-            android:theme="@style/Theme.Zombies.NoActionBar" />
+            android:label="Firebase"
+            android:parentActivityName="com.rtxschool.zombies.MainActivity"
+            android:theme="@style/Theme.Zombies.NoActionBar"
+            />
         <activity
             android:name=".persistCredent"
             android:exported="false"
@@ -70,6 +72,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
-    </application>
 
+</application>
 </manifest>

@@ -1,3 +1,5 @@
+//verifies proper format for user, code, etc
+
 package com.rtxschool.zombies;
 
 import android.text.Editable;
@@ -5,11 +7,16 @@ import android.util.Patterns;
 
 public class text_format_proper
 {
+    //the results of the verify process.
+    //true = each field is proper
+    //not true = 1 or more field is not proper
     public
     boolean results = !true;
 
+    //the message to provide to the user
     public String msg = "";
 
+    //constructor to see if each field is proper
     text_format_proper
             (String user,
              String electro,
@@ -27,7 +34,6 @@ public class text_format_proper
         this.results = res_u && res_e && res_p;
     }
 
-
     boolean verify_user(String user
                         ) {
         user = user.trim();
@@ -35,7 +41,7 @@ public class text_format_proper
         if (user.equals("")
         )
         {
-            msg += "UnProper User Name \r";
+            msg += "UnProper User Name \n";
 
             return !true;
         }
@@ -50,7 +56,7 @@ public class text_format_proper
         if (electro.equals("")
         )
         {
-            msg += "E Mail not provided \r";
+            msg += "E Mail not provided \n";
 
             return !true;
             }
@@ -59,7 +65,7 @@ public class text_format_proper
                                             ).matches()
             )
         {
-            msg += "E Mail not of proper format";
+            msg += "E Mail not of proper format \n";
 
             return !true;
         }
@@ -78,4 +84,5 @@ public class text_format_proper
 
         return true;
         }
+
         }

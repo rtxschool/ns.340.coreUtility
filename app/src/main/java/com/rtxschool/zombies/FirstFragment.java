@@ -118,11 +118,15 @@ public class FirstFragment extends Fragment {
                     public void onClick(View view) {
                         int to = R.id.prim_to_persist_user;
 
+                        if (!is_net_found()
+                        )
+                            to = R.id.prim_to_cam_street_issues;
+
                         NavHostFragment.findNavController(FirstFragment.this)
                                 .navigate(to
                                 );
-                    }
-                });
+                        }
+                        });
 
         cur_context.txtCmdTsk1.
                 setOnClickListener(new View.OnClickListener() {
@@ -265,7 +269,7 @@ public class FirstFragment extends Fragment {
                             set_vis_status_crdTsk6();
                     }
                 });
-    }
+        }
 
     void set_vis_status_crdTsk1() {
         int status = VISIBLE;
@@ -370,4 +374,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         cur_context = null;
     }
-}
+    }

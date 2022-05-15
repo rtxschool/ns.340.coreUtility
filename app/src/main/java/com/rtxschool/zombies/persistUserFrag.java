@@ -1,4 +1,19 @@
+//AD 340
+//Assignment 6 | Persistent & Firebase
+
+//Requirements
+//Create function to verify user's text
+//..see text_format_proper
+//populate text fields with prior persistent values
+//..see persistUser
+//verify Firebase creds
+//logon to Firebase
+//Log on to Firebase
+//start Firebase activity
+
 package com.rtxschool.zombies;
+
+import static android.view.View.GONE; import static android.view.View.VISIBLE;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
@@ -35,8 +50,7 @@ public class persistUserFrag
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
-    )
-    {
+    ) {
 
         context = PersistUserFragBinding
                 .inflate(inflater, container, false);
@@ -49,15 +63,22 @@ public class persistUserFrag
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        context.cmdPersistReturn
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        return_();
+                    }
+                });
+
         context.cmdPersistLog
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         logOn();
                     }
-
-
                 });
+        //get the persisetent share preferences
         get_shared_prefs();
     }
 
@@ -80,27 +101,43 @@ public class persistUserFrag
         context.txtPCode.setText(sp.p_code);
     }
 
+    //return from the issues screen
+    void return_()
+
+    {
+        context.persistIssues.setVisibility(GONE);
+
+        context.persistPrim.setVisibility(VISIBLE);
+
+        context.txtMsgPersist.setText("");
+    }
+
+    //communicate the issue
+    void issues(String msg
+                )
+    {
+        context.persistIssues.setVisibility(VISIBLE);
+
+        context.persistPrim.setVisibility(GONE);
+
+        context.txtMsgPersist.setText(msg);
+   }
+
+
     //verify that the creds are proper.
     //if they are then
     //      store to the shared prefs
     //      try to verify creds to firebase
     //if not then show the error to the user
     private void logOn() {
-        /*
-        NavHostFragment.findNavController(persistUserFrag.this
-        )
-                .navigate(R.id.from_prim_to_cartog);
-        if (true) return;
-         */
-        //TODO: remove this passcode
-                text_format_proper tfp = new text_format_proper(context.txtNomencl.getText().toString(),
+        text_format_proper tfp = new text_format_proper(context.txtNomencl.getText().toString(),
                 context.txtElectrM.getText().toString(),
                 context.txtPCode.getText().toString()
         );
 
         if (!tfp.results
         ) {
-            //TODO: show error
+            issues(tfp.msg);
             return;
         }
 
@@ -118,87 +155,56 @@ public class persistUserFrag
         );
     }
 
+    //take the client & try to get to Firebase
     private void go_firebase(String client, String electro, String p_code
-    )
-        {
+    ) {
         try {
-            Log.d("FIREBASE", "logOn");
-            // 3 - sign into Firebase
-
             mAuth.signInWithEmailAndPassword(electro, p_code
             )
-                    .addOnCompleteListener(  getActivity(),
-                             new OnCompleteListener<AuthResult>()
-                          {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                    .addOnCompleteListener(getActivity(),
+                            new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            Log.d("FIREBASE", "signIn:onComplete:" +
-                                    task.isSuccessful());
-                            if (task.isSuccessful()) {
-                                // update profile. displayname is the value entered from UI
+                                    if (task.isSuccessful()) {
+                                        FirebaseUser user =
+                                                FirebaseAuth.getInstance().getCurrentUser();
 
-                                FirebaseUser user =
-                                        FirebaseAuth.getInstance().getCurrentUser();
+                                        UserProfileChangeRequest profileUpdates = new
+                                                UserProfileChangeRequest.Builder()
+                                                .setDisplayName(client)
+                                                .build();
 
-                                UserProfileChangeRequest profileUpdates = new
-                                        UserProfileChangeRequest.Builder()
-                                        .setDisplayName(client)
-                                        .build();
+                                        user.updateProfile(profileUpdates)
+                                                .addOnCompleteListener(new
+                                                                               OnCompleteListener<Void>() {
+                                                                                   @Override
+                                                                                   public void onComplete(@NonNull Task<Void>
+                                                                                                                  task) {
+                                                                                       if (task.isSuccessful()) {
+                                                                                           int to = R.id.prim_to_firebase;
 
-                                user.updateProfile(profileUpdates)
-                                        .addOnCompleteListener(new
-                                                                       OnCompleteListener<Void>() {
-                                                                           @Override
-                                                                           public void onComplete(@NonNull Task<Void>
-                                                                                                          task)
-                                                                           {
-                                                                               if (task.isSuccessful()) {
-                                                                                   Log.d("FIREBASE", "User profile updated.");
-                                                                                   // Go to FirebaseActivity
+                                                                                           startActivity(new
+                                                                                                   Intent(getActivity(),
+                                                                                                   FirebaseActivity.class));
 
-//This seems to close the entire tool, yet if remarked, the toast at L180 is fine
-                                                                                   startActivity(new
-                                                                                           Intent(getActivity(),
-                                                                                            FirebaseActivity.class));
+                                                                                       }
+                                                                                   }
+                                                                               });
+                                    } else {
+                                        String msg = "Could not log on to Firebase";
 
-                                                                                   // Go to FirebaseActivit  y
-                                                                       /*
-                                                                                   NavHostFragment.findNavController(persistUserFrag.this
-                                                                                                                      )
-                                                                                           .navigate(R.id.prim_to_persist_users
-                                                                                           );
-                                                                                   return;
-                                                                                   */
+                                        issues(msg);
 
-                                                                         //        /
-                                                                         //        startActivity(new
-                                                                         //                Intent(getActivity(),
-                                                                         //                FirebaseActivity.class));
-                                                                         //
-                                                                         //
-                                                                                   Toast.makeText(getActivity(), "Here", LENGTH_SHORT).show();
-                                                                               }
-                                                                           }
-                                                                       });
-
-                                /*
-            NavHostFragment.findNavController(persistUserFrag.this
-            )
-                    .navigate(R.id.prim_to_persist_users
-                    );
-           */
-        } else {
-                                Log.d("FIREBASE", "sign-in failed");
-                                Toast.makeText(getActivity(),
-                                        "Sign In Failed",
-                                        LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        } catch (Exception r) {
-            String u = r.getMessage();  Toast.makeText(getActivity(), u, LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
         }
+        catch (Exception r)
+        {
+            String msg = "Could not log on to Firebase";
 
-    }
-}
+            issues(msg);
+         }
+        }
+        }

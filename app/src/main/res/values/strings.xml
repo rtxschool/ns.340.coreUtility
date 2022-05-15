@@ -49,6 +49,10 @@
     <string name="str_unique">
         unique
     </string>
+    <string name="str_return"
+        >
+       Return
+    </string>
     <string name="str_log">
         Log On
     </string>
