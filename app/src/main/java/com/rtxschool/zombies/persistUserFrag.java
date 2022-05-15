@@ -157,7 +157,7 @@ public class persistUserFrag
                                                                                    Log.d("FIREBASE", "User profile updated.");
                                                                                    // Go to FirebaseActivity
 
-//This seems to close the entire tool, yet if remarked, the toast at L80 is fine.
+//This seems to close the entire tool, yet if remarked, the toast at L180 is fine
                                                                                    startActivity(new
                                                                                            Intent(getActivity(),
                                                                                             FirebaseActivity.class));
