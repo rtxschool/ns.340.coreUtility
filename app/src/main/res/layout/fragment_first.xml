@@ -61,7 +61,7 @@
                 android:scrollbars="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/crd_tsk1"
+                    android:id="@+id/crd_tsk6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -83,19 +83,19 @@
 
 
                         <TextView
-                            android:id="@+id/txt_cmd_tsk1"
+                            android:id="@+id/txt_cmd_tsk6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="@string/stxt_cmd_tsk1"
+                            android:text="@string/stxt_cmd_tsk6"
                             android:textColor="#0664AF"
                             android:textStyle="bold" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/crd_self_stat"
+                            android:id="@+id/crd_persist"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/txt_cmd_tsk1"
+                            android:layout_below="@id/txt_cmd_tsk6"
                             android:layout_alignParentLeft="true"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
@@ -108,19 +108,273 @@
                             app:cardCornerRadius="8dp">
 
                             <Button
-                                android:id="@+id/cmd_self_stat"
+                                android:id="@+id/cmd_persist"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="18dp"
                                 android:layout_marginRight="18dp"
                                 android:backgroundTint="#C8C8C8"
-                                android:text="@string/scmd_self_stat"
+                                android:text="@string/scmd_tsk6"
                                 app:cornerRadius="4dp" />
 
 
                         </androidx.cardview.widget.CardView>
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crd_tsk4_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#B4B4B4"
+                    app:cardBackgroundColor="#505050"
+                    app:cardCornerRadius="8dp"
+                    android:layout_below="@id/crd_tsk6"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#A89912"
+                        android:paddingBottom="28dp"
+                        android:scrollbarAlwaysDrawVerticalTrack="false"
+                        android:scrollbars="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/txt_cmd_tsk4_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/stxt_cmd_tsk4_2"
+                            android:textColor="#0664AF"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_cartog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_cmd_tsk4_2"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+
+                            android:background="#B4B4B4"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#505050"
+                            app:cardCornerRadius="8dp">
+
+                            <Button
+                                android:id="@+id/cmd_cartog"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="18dp"
+                                android:backgroundTint="#C8C8C8"
+                                android:text="@string/scmd_tsk4_2"
+                                app:cornerRadius="4dp" />
+
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crd_tsk4_2_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/crd_tsk4_2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#B4B4B4"
+                    app:cardBackgroundColor="#505050"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#A89912"
+                        android:paddingBottom="28dp"
+                        android:scrollbarAlwaysDrawVerticalTrack="false"
+                        android:scrollbars="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/txt_cmd_tsk4_2_0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/stxt_cmd_tsk4_2_0"
+                            android:textColor="#0664AF"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_cartog_bonus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_cmd_tsk4_2_0"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+
+                            android:background="#B4B4B4"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#505050"
+                            app:cardCornerRadius="8dp">
+
+                            <Button
+                                android:id="@+id/cmd_cartog_bonus"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="18dp"
+                                android:backgroundTint="#C8C8C8"
+                                android:text="@string/scmd_tsk4_2_0"
+                                app:cornerRadius="4dp" />
+
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crd_tsk4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#B4B4B4"
+                    app:cardBackgroundColor="#505050"
+                    app:cardCornerRadius="8dp"
+                    android:layout_below="@id/crd_tsk4_2_0"
+                    >
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#A89912"
+                        android:paddingBottom="28dp"
+                        android:scrollbarAlwaysDrawVerticalTrack="false"
+                        android:scrollbars="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_cmd_tsk4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/stxt_cmd_tsk4"
+                            android:textColor="#0664AF"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_street"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_cmd_tsk4"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+
+                            android:background="#B4B4B4"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#505050"
+                            app:cardCornerRadius="8dp">
+
+                            <Button
+                                android:id="@+id/cmd_street"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="18dp"
+                                android:backgroundTint="#C8C8C8"
+                                android:text="@string/scmd_tsk4"
+                                app:cornerRadius="4dp" />
+
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crd_tsk3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/crd_tsk4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#B4B4B4"
+                    app:cardBackgroundColor="#505050"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#A89912"
+                        android:paddingBottom="28dp"
+                        android:scrollbarAlwaysDrawVerticalTrack="false"
+                        android:scrollbars="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/txt_cmd_tsk3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/stxt_cmd_tsk3"
+                            android:textColor="#0664AF"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_zombies"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_cmd_tsk3"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+
+                            android:background="#B4B4B4"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#505050"
+                            app:cardCornerRadius="8dp">
+
+                            <Button
+                                android:id="@+id/cmd_zombies"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="18dp"
+                                android:backgroundTint="#C8C8C8"
+                                android:text="@string/zomb_movies"
+                                app:cornerRadius="4dp" />
+
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/crd_tsk2"
                     android:layout_width="match_parent"
@@ -131,7 +385,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
-                    android:layout_below = "@id/crd_tsk1"
+                    android:layout_below = "@id/crd_tsk3"
                     >
 
                     <RelativeLayout
@@ -289,11 +543,11 @@
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/crd_tsk3"
+                    android:id="@+id/crd_tsk1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/crd_tsk2"
                     android:layout_alignParentLeft="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
@@ -301,72 +555,11 @@
                     android:layout_marginBottom="8dp"
                     android:background="#B4B4B4"
                     app:cardBackgroundColor="#505050"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    android:layout_below = "@id/crd_tsk2"
+                    >
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#A89912"
-                        android:paddingBottom="28dp"
-                        android:scrollbarAlwaysDrawVerticalTrack="false"
-                        android:scrollbars="horizontal">
-
-
-                    <TextView
-                        android:id="@+id/txt_cmd_tsk3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="@string/stxt_cmd_tsk3"
-                        android:textColor="#0664AF"
-                        android:textStyle="bold" />
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/crd_zombies"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txt_cmd_tsk3"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
-
-                            android:background="#B4B4B4"
-                            android:visibility="gone"
-                            app:cardBackgroundColor="#505050"
-                            app:cardCornerRadius="8dp">
-
-                            <Button
-                                android:id="@+id/cmd_zombies"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="18dp"
-                                android:layout_marginRight="18dp"
-                                android:backgroundTint="#C8C8C8"
-                                android:text="@string/zomb_movies"
-                                app:cornerRadius="4dp" />
-
-
-                        </androidx.cardview.widget.CardView>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crd_tsk4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/crd_tsk3"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="#B4B4B4"
-                    app:cardBackgroundColor="#505050"
-                    app:cardCornerRadius="8dp">
-
-                    <RelativeLayout
+                <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#A89912"
@@ -376,19 +569,19 @@
 
 
                         <TextView
-                            android:id="@+id/txt_cmd_tsk4"
+                            android:id="@+id/txt_cmd_tsk1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="@string/stxt_cmd_tsk4"
+                            android:text="@string/stxt_cmd_tsk1"
                             android:textColor="#0664AF"
                             android:textStyle="bold" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/crd_street"
+                            android:id="@+id/crd_self_stat"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/txt_cmd_tsk4"
+                            android:layout_below="@id/txt_cmd_tsk1"
                             android:layout_alignParentLeft="true"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
@@ -401,148 +594,21 @@
                             app:cardCornerRadius="8dp">
 
                             <Button
-                                android:id="@+id/cmd_street"
+                                android:id="@+id/cmd_self_stat"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="18dp"
                                 android:layout_marginRight="18dp"
                                 android:backgroundTint="#C8C8C8"
-                                android:text="@string/scmd_tsk4"
+                                android:text="@string/scmd_self_stat"
                                 app:cornerRadius="4dp" />
 
 
                         </androidx.cardview.widget.CardView>
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crd_tsk4_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/crd_tsk4"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="#B4B4B4"
-                    app:cardBackgroundColor="#505050"
-                    app:cardCornerRadius="8dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#A89912"
-                        android:paddingBottom="28dp"
-                        android:scrollbarAlwaysDrawVerticalTrack="false"
-                        android:scrollbars="horizontal">
-
-
-                        <TextView
-                            android:id="@+id/txt_cmd_tsk4_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:text="@string/stxt_cmd_tsk4_2"
-                            android:textColor="#0664AF"
-                            android:textStyle="bold" />
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/crd_cartog"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txt_cmd_tsk4_2"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
-
-                            android:background="#B4B4B4"
-                            android:visibility="gone"
-                            app:cardBackgroundColor="#505050"
-                            app:cardCornerRadius="8dp">
-
-                            <Button
-                                android:id="@+id/cmd_cartog"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="18dp"
-                                android:layout_marginRight="18dp"
-                                android:backgroundTint="#C8C8C8"
-                                android:text="@string/scmd_tsk4_2"
-                                app:cornerRadius="4dp" />
-
-
-                        </androidx.cardview.widget.CardView>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crd_tsk4_2_0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/crd_tsk4_2"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="#B4B4B4"
-                    app:cardBackgroundColor="#505050"
-                    app:cardCornerRadius="8dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#A89912"
-                        android:paddingBottom="28dp"
-                        android:scrollbarAlwaysDrawVerticalTrack="false"
-                        android:scrollbars="horizontal">
-
-
-                        <TextView
-                            android:id="@+id/txt_cmd_tsk4_2_0"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:text="@string/stxt_cmd_tsk4_2_0"
-                            android:textColor="#0664AF"
-                            android:textStyle="bold" />
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/crd_cartog_bonus"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txt_cmd_tsk4_2_0"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
-
-                            android:background="#B4B4B4"
-                            android:visibility="gone"
-                            app:cardBackgroundColor="#505050"
-                            app:cardCornerRadius="8dp">
-
-                            <Button
-                                android:id="@+id/cmd_cartog_bonus"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="18dp"
-                                android:layout_marginRight="18dp"
-                                android:backgroundTint="#C8C8C8"
-                                android:text="@string/scmd_tsk4_2_0"
-                                app:cornerRadius="4dp" />
-
-
-                        </androidx.cardview.widget.CardView>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
             </RelativeLayout>
-
         </ScrollView>
     </RelativeLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
