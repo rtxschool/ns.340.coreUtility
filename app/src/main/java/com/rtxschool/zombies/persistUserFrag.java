@@ -86,14 +86,14 @@ public class persistUserFrag
     //      try to verify creds to firebase
     //if not then show the error to the user
     private void logOn() {
+        /*
         NavHostFragment.findNavController(persistUserFrag.this
         )
                 .navigate(R.id.from_prim_to_cartog);
         if (true) return;
+         */
         //TODO: remove this passcode
-        context.txtPCode.setText("FHDL}s[3zJ]ZYe/6"
-        );
-        text_format_proper tfp = new text_format_proper(context.txtNomencl.getText().toString(),
+                text_format_proper tfp = new text_format_proper(context.txtNomencl.getText().toString(),
                 context.txtElectrM.getText().toString(),
                 context.txtPCode.getText().toString()
         );
@@ -155,6 +155,13 @@ public class persistUserFrag
                                                                            {
                                                                                if (task.isSuccessful()) {
                                                                                    Log.d("FIREBASE", "User profile updated.");
+                                                                                   // Go to FirebaseActivity
+
+//This seems to close the entire tool, yet if remarked, the toast at L80 is fine.
+                                                                                   startActivity(new
+                                                                                           Intent(getActivity(),
+                                                                                            FirebaseActivity.class));
+
                                                                                    // Go to FirebaseActivit  y
                                                                        /*
                                                                                    NavHostFragment.findNavController(persistUserFrag.this
